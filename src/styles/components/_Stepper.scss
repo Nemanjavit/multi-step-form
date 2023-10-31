@@ -1,0 +1,12 @@
+.stepper {
+    padding: 32px;
+    width: 275px;
+    min-height: 570px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('../../assets/images/bg-sidebar-desktop.svg');
+
+    .stepper-wrapper {
+        gap: 16px;
+    }
+}

@@ -1,0 +1,8 @@
+@import './styles/vendor/bootstrap';
+
+@import './styles/components';
+
+.App,#root,html {
+  min-height: 100vh;
+  min-width: 100%;
+}
