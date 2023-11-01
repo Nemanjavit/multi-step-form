@@ -1,0 +1,20 @@
+.your-info {
+    gap: 24px;
+
+    label {
+        color:$marine-blue;
+        font-size: 12px;
+    }
+
+    input {
+        border-radius: 5px;
+        border: 1px solid $light-gray;
+        padding: 0.5rem;
+
+        &::placeholder {
+            font-weight: 500;
+            color: $cool-gray;
+        }
+    }
+
+}
