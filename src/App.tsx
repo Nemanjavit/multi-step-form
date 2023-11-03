@@ -6,11 +6,8 @@ import Stepper from "./components/stepper/stepper";
 
 function App() {
   return (
-    <div className="App">
-      <div className="d-flex">
-        <Stepper />
-        <Form />
-      </div>
+    <div className="App d-flex justify-content-center align-items-center">
+      <Form />
     </div>
   );
 }

@@ -1,0 +1,90 @@
+.select-plan {
+  .plan-wrapper {
+    display: flex;
+    gap: 20px;
+  }
+
+  .plan {
+    width: 138px;
+    height: 158px;
+    padding: 1rem;
+    display: flex;
+    border-radius: 0.5rem;
+    flex-direction: column;
+    background-color: transparent;
+    border: 1px solid $light-gray;
+
+    &.active {
+      border-color: $purplish-blue;
+      background-color: $alabaster;
+    }
+  }
+
+  .plan-title,
+  .plan-price {
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  .plan-title {
+    color: $marine-blue;
+  }
+
+  .plan-price {
+    color: $light-gray;
+  }
+
+  .plan-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 3rem;
+    border-radius: 100%;
+  }
+
+  .switch-wrapper {
+    width: 100%;
+    height: 3rem;
+    margin-top: 2rem;
+    border-radius: 0.5rem;
+    background-color: $alabaster;
+
+    .SwitchRoot {
+      width: 38px;
+      height: 20px;
+      border-radius: 9999px;
+      margin: 0 1.5rem 0 1.5rem;
+      background-color: $marine-blue;
+    }
+
+    .SwitchRoot[data-state="checked"] {
+      background-color: $marine-blue;
+    }
+
+    .SwitchThumb {
+      display: block;
+      width: 12px;
+      height: 12px;
+      background-color: white;
+      border-radius: 9999px;
+      transition: transform 100ms;
+
+      transform: translateX(0%);
+      will-change: transform;
+    }
+
+    .SwitchThumb[data-state="checked"] {
+      transform: translateX(100%);
+    }
+  }
+
+  .label-monthly,
+  .label-yearly {
+    font-size: 13px;
+    color: $light-gray;
+    font-weight: 700;
+
+    &.checked {
+      color: $marine-blue;
+    }
+  }
+}

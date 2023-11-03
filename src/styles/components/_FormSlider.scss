@@ -1,29 +1,40 @@
 .form-slider {
+  padding: 64px 100px 32px 100px;
+
+  .slider-container {
+    width: 450px;
     height: 100%;
-    padding:64px 100px 32px 100px;
+  }
 
-    .form-slider-header {
-        margin-bottom: 40px;
+  .form-slider-header {
+    margin-bottom: 40px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $marine-blue;
+  }
+
+  h3 {
+    font-size: 0.75rem;
+    color: $cool-gray;
+  }
+
+  .slider-back,
+  .slider-forward {
+    border: none;
+    color: $white;
+    font-size: 12px;
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    background-color: $marine-blue;
+  }
+
+  button {
+    &.hidden {
+      visibility: hidden;
+      pointer-events: none;
     }
-
-    h2 {
-        font-size:1.5rem ;
-        font-weight: bold;
-        color:$marine-blue;
-    }
-
-    h3 {
-        font-size: 0.75rem;
-        color: $cool-gray;
-    }
-
-    .slider-back,.slider-forward {
-        border: none;
-        color: $white;
-        font-size: 12px;
-        border-radius: 10px;
-        padding: 1rem 1.5rem;
-        background-color: $marine-blue;
-    }
-
+  }
 }
