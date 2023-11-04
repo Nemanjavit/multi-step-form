@@ -1,0 +1,58 @@
+.checkbox-wrapper {
+  width: 100%;
+  font-size: 0.75rem;
+  border-radius: 0.5rem;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid $light-gray;
+
+  &.selected {
+    background-color: $alabaster;
+    border: 1px solid $purplish-blue;
+  }
+
+  .label-wrapper {
+    flex-grow: 1;
+    margin-left: 1.5rem;
+  }
+
+  .checkbox-label {
+    color: $marine-blue;
+    font-weight: 700;
+  }
+
+  .sub-label {
+    color: $cool-gray;
+  }
+
+  .CheckboxRoot {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    overflow: hidden;
+    border-radius: 4px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $light-gray;
+  }
+
+  .CheckboxIndicator {
+    background: $white;
+
+    svg {
+      height: 20px;
+      width: 20px;
+    }
+
+    &[data-state="checked"] {
+      background-color: $purplish-blue;
+
+      svg {
+        color: $white;
+      }
+    }
+  }
+
+  .price-wrapper {
+    color: $purplish-blue;
+  }
+}

@@ -4,6 +4,7 @@ import advanced from "../../assets/images/icon-advanced.svg";
 import pro from "../../assets/images/icon-pro.svg";
 import * as Switch from "@radix-ui/react-switch";
 import PlanItem from "../plan-item";
+import { useFormContext, Controller } from "react-hook-form";
 
 interface SelectPlanProps {}
 
@@ -15,35 +16,22 @@ export type PlanT = {
 };
 
 const SelectPlan: React.FC<SelectPlanProps> = ({}) => {
-  const [planSelected, setPlanSelected] = useState<string>("");
+  const { setValue, watch, getValues } = useFormContext();
+  const planLength = watch("planLength", false);
+
   const isChecked = true;
+
   const plans = [
-    { title: "Arcade", icon: arcade, monthly: "$9/mo", yearly: "90/yr" },
-    { title: "Advanced", icon: advanced, monthly: "$9/mo", yearly: "90/yr" },
-    { title: "Pro", icon: pro, monthly: "$9/mo", yearly: "90/yr" },
+    { title: "Arcade", icon: arcade, monthly: "9", yearly: "90" },
+    { title: "Advanced", icon: advanced, monthly: "12", yearly: "120" },
+    { title: "Pro", icon: pro, monthly: "15", yearly: "150" },
   ];
 
-  const checkChange = (checked: boolean) => {
-    console.log(checked);
-  };
-
-  const selectedPlan = (plan: string) => {
-    console.log(plan);
-    setPlanSelected(plan);
-  };
   return (
     <div className="select-plan">
       <div className="plan-wrapper">
         {plans.map((plan, index) => {
-          const isSelected = planSelected === plan.title;
-          return (
-            <PlanItem
-              isSelected={isSelected}
-              selectedPlan={selectedPlan}
-              key={index}
-              plan={plan}
-            />
-          );
+          return <PlanItem planLength={planLength} key={index} plan={plan} />;
         })}
       </div>
 
@@ -54,9 +42,21 @@ const SelectPlan: React.FC<SelectPlanProps> = ({}) => {
         >
           Monthly
         </label>
-        <Switch.Root className="SwitchRoot" onCheckedChange={checkChange}>
-          <Switch.Thumb className="SwitchThumb" />
-        </Switch.Root>
+        <Controller
+          name="planLength"
+          render={({ field: { value, onChange } }) => {
+            return (
+              <Switch.Root
+                checked={value}
+                className="SwitchRoot"
+                onCheckedChange={onChange}
+              >
+                <Switch.Thumb className="SwitchThumb" />
+              </Switch.Root>
+            );
+          }}
+        />
+
         <label
           className={`label-monthly ${isChecked ? "checked" : ""}`}
           htmlFor="yearly"

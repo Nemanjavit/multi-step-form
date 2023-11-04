@@ -1,26 +1,24 @@
-import { ChangeEvent } from "react";
+import { useFormContext } from "react-hook-form";
 
 interface InputProps {
   type: "text" | "number" | "email";
   label: string;
-  value: string | number | undefined;
-  name: string;
+  name: "email" | "name" | "phone";
   placeholder: string;
   error?: boolean;
   disabled?: boolean;
-  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
 const Input: React.FC<InputProps> = ({
   type,
   label,
-  value,
   name,
   placeholder,
   error,
   disabled,
-  onChange,
 }) => {
+  const { register } = useFormContext();
+
   return (
     <div className="input-wrapper">
       <div className="label-row">
@@ -30,11 +28,9 @@ const Input: React.FC<InputProps> = ({
       <input
         type={type}
         id={label}
-        value={value}
-        name={name}
         placeholder={placeholder}
-        onChange={onChange}
         disabled={disabled}
+        {...register(name)}
       />
     </div>
   );
