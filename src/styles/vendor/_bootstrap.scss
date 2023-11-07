@@ -1,13 +1,4 @@
-$primary-font:'Ubuntu',sans-serif;
-
-$grid-breakpoints:(
-    xs: 0,
-    sm: 375px,
-    md: 768px,
-    lg: 992px,
-    xl: 1200px,
-    xxl: 1400px
-);
+$primary-font: "Ubuntu", sans-serif;
 
 //  Primary
 
@@ -28,6 +19,6 @@ $white: hsl(0, 0%, 100%);
 $font-size-base: 1rem;
 $font-family-base: $primary-font;
 
-$padding-sm:8px;
+$padding-sm: 8px;
 
-@import '~bootstrap/scss/bootstrap.scss';
+@import "~bootstrap/scss/bootstrap.scss";
