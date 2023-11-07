@@ -1,0 +1,54 @@
+.summary {
+  .summary-wrapper {
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background-color: $magnolia;
+  }
+
+  .change-button {
+    padding: 0px;
+    border: none;
+    color: $cool-gray;
+    background: transparent;
+    text-decoration: underline;
+  }
+  .plan-title,
+  .plan-lenght,
+  .plan-price {
+    color: $marine-blue;
+    font-weight: 700;
+  }
+
+  .plan-lenght {
+    text-transform: capitalize;
+  }
+
+  .summary-addon::before {
+    height: 1px;
+    margin-top: 1.5rem;
+    content: "";
+    width: 100%;
+    display: block;
+    background-color: $light-gray;
+  }
+
+  .summary-addOnItem {
+    margin-top: 1.5rem;
+
+    .title {
+      color: $cool-gray;
+    }
+    .price {
+      color: $marine-blue;
+    }
+  }
+
+  .summary-total {
+    padding: 2rem 1.5rem;
+    color: $cool-gray;
+    .total-price {
+      color: $purplish-blue;
+      font-weight: 700;
+    }
+  }
+}

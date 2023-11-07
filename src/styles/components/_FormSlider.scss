@@ -21,7 +21,12 @@
     color: $cool-gray;
   }
 
-  .slider-back,
+  .slider-back {
+    padding: 0px;
+    border: none;
+    color: $cool-gray;
+    background: transparent;
+  }
   .slider-forward {
     border: none;
     color: $white;

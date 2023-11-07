@@ -1,3 +1,4 @@
+import { steps } from "../../utils/data";
 import Step from "../step/step";
 
 interface StepperProps {
@@ -5,28 +6,16 @@ interface StepperProps {
 }
 
 const Stepper: React.FC<StepperProps> = ({ step }) => {
-  const steps = [
-    {
-      stepLabel: "Step 1",
-      stepTitle: "Your info",
-      stepNum: "1",
-    },
-    {
-      stepLabel: "Step 2",
-      stepTitle: "Select plan",
-      stepNum: "2",
-    },
-    {
-      stepLabel: "Step 3",
-      stepTitle: "Add-ons",
-      stepNum: "3",
-    },
-    {
-      stepLabel: "Step 4",
-      stepTitle: "Summary",
-      stepNum: "4",
-    },
-  ];
+  const keepLastStepActive = (
+    step: number,
+    steps: { stepLabel: string; stepTitle: string; stepNum: string }[],
+    index: number
+  ) => {
+    if (step < steps.length) {
+      return step === index + 1;
+    }
+    return index === steps.length - 1;
+  };
 
   return (
     <div className="stepper">
@@ -40,7 +29,7 @@ const Stepper: React.FC<StepperProps> = ({ step }) => {
               stepNum={stepNum}
               stepLabel={stepLabel}
               stepTitle={stepTitle}
-              isActive={step === index + 1}
+              isActive={keepLastStepActive(step, steps, index)}
             />
           );
         })}

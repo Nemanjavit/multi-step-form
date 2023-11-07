@@ -1,9 +1,6 @@
-import { useState } from "react";
-import arcade from "../../assets/images/icon-arcade.svg";
-import advanced from "../../assets/images/icon-advanced.svg";
-import pro from "../../assets/images/icon-pro.svg";
-import * as Switch from "@radix-ui/react-switch";
 import PlanItem from "../plan-item";
+import { plans } from "../../utils/data";
+import * as Switch from "@radix-ui/react-switch";
 import { useFormContext, Controller } from "react-hook-form";
 
 interface SelectPlanProps {}
@@ -16,16 +13,8 @@ export type PlanT = {
 };
 
 const SelectPlan: React.FC<SelectPlanProps> = ({}) => {
-  const { setValue, watch, getValues } = useFormContext();
+  const { watch } = useFormContext();
   const planLength = watch("planLength", false);
-
-  const isChecked = true;
-
-  const plans = [
-    { title: "Arcade", icon: arcade, monthly: "9", yearly: "90" },
-    { title: "Advanced", icon: advanced, monthly: "12", yearly: "120" },
-    { title: "Pro", icon: pro, monthly: "15", yearly: "150" },
-  ];
 
   return (
     <div className="select-plan">
@@ -37,7 +26,7 @@ const SelectPlan: React.FC<SelectPlanProps> = ({}) => {
 
       <div className="switch-wrapper d-flex align-items-center justify-content-center">
         <label
-          className={`label-monthly ${isChecked ? "checked" : ""}`}
+          className={`label-monthly ${!planLength ? "checked" : ""}`}
           htmlFor="monthly"
         >
           Monthly
@@ -58,7 +47,7 @@ const SelectPlan: React.FC<SelectPlanProps> = ({}) => {
         />
 
         <label
-          className={`label-monthly ${isChecked ? "checked" : ""}`}
+          className={`label-monthly ${planLength ? "checked" : ""}`}
           htmlFor="yearly"
         >
           Yearly

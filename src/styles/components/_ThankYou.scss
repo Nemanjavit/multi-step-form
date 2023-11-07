@@ -1,0 +1,23 @@
+.thank-you {
+  height: 100%;
+
+  .icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 2rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $marine-blue;
+    margin-bottom: 1.5rem;
+  }
+
+  .text {
+    text-align: center;
+    padding: 0 1rem;
+    font-size: 0.75rem;
+    color: $cool-gray;
+  }
+}

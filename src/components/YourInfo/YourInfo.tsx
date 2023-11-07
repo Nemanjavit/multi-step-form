@@ -1,16 +1,8 @@
-import { useState } from "react";
 import Input from "../Input";
-import { UseFormRegister } from "react-hook-form/dist/types";
-import { FieldValues } from "../form-slider/form-slider";
-import { useFormContext } from "react-hook-form";
 
 interface YourInfoProps {}
 
 const YourInfo: React.FC<YourInfoProps> = ({}) => {
-  const [name, setName] = useState<string>("");
-  const [email, setEmail] = useState<string>("");
-  const [phone, setPhone] = useState<number | undefined>(undefined);
-
   return (
     <div className="d-flex flex-column your-info">
       <Input
@@ -30,6 +22,7 @@ const YourInfo: React.FC<YourInfoProps> = ({}) => {
         placeholder="e.g. +1 234 567 890"
         label="Phone Number"
         name="phone"
+        options={{ required: true, minLength: 6, maxLength: 12 }}
       />
     </div>
   );

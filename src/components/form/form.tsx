@@ -1,6 +1,6 @@
 import { useState } from "react";
-import FormSlider from "../form-slider/form-slider";
 import Stepper from "../stepper/stepper";
+import FormSlider from "../form-slider/form-slider";
 
 interface FormProps {}
 

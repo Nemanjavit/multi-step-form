@@ -1,8 +1,8 @@
 import { AddonItemT } from "../add-ons";
-import * as Checkbox from "@radix-ui/react-checkbox";
 import { CheckIcon } from "@radix-ui/react-icons";
-import { useFormContext, Controller } from "react-hook-form";
+import * as Checkbox from "@radix-ui/react-checkbox";
 import { convertPlanLenght } from "../../utils/helpers";
+import { useFormContext, Controller } from "react-hook-form";
 
 interface CheckBoxProps {
   addOn: AddonItemT;
@@ -37,11 +37,11 @@ const CheckBox: React.FC<CheckBoxProps> = ({ addOn }) => {
         control={control}
         render={({ field: { value, onChange } }) => (
           <Checkbox.Root
+            value={value}
             name={labelToName(label)}
             className="CheckboxRoot"
-            checked={value}
             id={labelToName(label)}
-            onCheckedChange={(checked) => onChange(checked)}
+            onCheckedChange={() => onChange(addOn)}
           >
             <Checkbox.Indicator className="CheckboxIndicator">
               <CheckIcon />
