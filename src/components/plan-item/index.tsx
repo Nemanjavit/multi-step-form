@@ -20,12 +20,17 @@ const PlanItem: React.FC<PlanItemProps> = ({ plan, planLength }) => {
       }`}
     >
       <img className="plan-icon" src={icon} alt="plan-icon" />
-      <span className="plan-title">{title}</span>
-      <span className="plan-price">
-        {`${convertPlanLenght(planLength) === "monthly" ? monthly : yearly}/${
-          convertPlanLenght(planLength) === "monthly" ? "mo" : "yr"
-        }`}
-      </span>
+      <div className="title-price-wrapper">
+        <p className="plan-title">{title}</p>
+        <p className="plan-price">
+          {`${convertPlanLenght(planLength) === "monthly" ? monthly : yearly}/${
+            convertPlanLenght(planLength) === "monthly" ? "mo" : "yr"
+          }`}
+        </p>
+        {convertPlanLenght(planLength) === "yearly" && (
+          <p className="plan-promotion">2 months free</p>
+        )}
+      </div>
     </button>
   );
 };

@@ -4,4 +4,9 @@
   padding: 1rem;
   border-radius: 1rem;
   background-color: $white;
+
+  @include media-breakpoint-down(sm) {
+    padding: unset;
+    height: unset;
+  }
 }

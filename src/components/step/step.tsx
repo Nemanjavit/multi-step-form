@@ -17,10 +17,10 @@ const Step: React.FC<StepProps> = ({
         isActive ? "active" : ""
       }`}
     >
-      <div className="step-circle d-flex align-items-center justify-content-center me-3">
+      <div className="step-circle d-flex align-items-center justify-content-center me-sm-3">
         <div className="step-number">{stepNum}</div>
       </div>
-      <div className="d-flex flex-column">
+      <div className="d-none d-sm-flex flex-column">
         <span className="step-label">{stepLabel}</span>
         <span className="step-title">{stepTitle}</span>
       </div>

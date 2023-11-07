@@ -18,7 +18,7 @@ const SelectPlan: React.FC<SelectPlanProps> = ({}) => {
 
   return (
     <div className="select-plan">
-      <div className="plan-wrapper">
+      <div className="plan-wrapper d-flex flex-column flex-sm-row">
         {plans.map((plan, index) => {
           return <PlanItem planLength={planLength} key={index} plan={plan} />;
         })}

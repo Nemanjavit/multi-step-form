@@ -19,7 +19,7 @@ const Stepper: React.FC<StepperProps> = ({ step }) => {
 
   return (
     <div className="stepper">
-      <div className="stepper-wrapper d-flex flex-column">
+      <div className="stepper-wrapper justify-content-center d-flex flex-sm-column">
         {steps.map((stepItem, index) => {
           const { stepLabel, stepNum, stepTitle } = stepItem;
 

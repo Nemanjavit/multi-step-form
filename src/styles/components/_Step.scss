@@ -1,31 +1,31 @@
 .step {
-    background: transparent;
-    font-size: 12px;
-    color: $white;
-    text-transform: uppercase;
-    width: 211px;
+  background: transparent;
+  font-size: 12px;
+  color: $white;
+  text-transform: uppercase;
 
+  .step-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid $white;
+  }
+
+  .step-number,
+  .step-title {
+    font-weight: bold;
+  }
+
+  .step-label {
+    color: $cool-gray;
+  }
+
+  &.active {
     .step-circle {
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        border: 1px solid $white;
+      background-color: $light-blue;
+      .step-number {
+        color: $marine-blue;
+      }
     }
-
-    .step-number,.step-title {
-        font-weight: bold;
-    }
-
-    .step-label {
-        color: $cool-gray;
-    }
-
-    &.active {
-        .step-circle {
-            background-color: $light-blue;
-            .step-number {
-                color: $marine-blue;
-            }
-        }
-    }
+  }
 }

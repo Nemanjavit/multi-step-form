@@ -4,6 +4,11 @@
     gap: 20px;
   }
 
+  p {
+    margin: 0;
+    text-align: left;
+  }
+
   .plan {
     width: 138px;
     height: 158px;
@@ -21,12 +26,14 @@
   }
 
   .plan-title,
-  .plan-price {
+  .plan-price,
+  .plan-promotion {
     font-size: 11px;
     font-weight: 700;
   }
 
-  .plan-title {
+  .plan-title,
+  .plan-promotion {
     color: $marine-blue;
   }
 
@@ -85,6 +92,25 @@
 
     &.checked {
       color: $marine-blue;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    .plan {
+      width: 100%;
+      height: unset;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .plan-icon {
+      margin: 0 1rem 0 0;
+    }
+
+    .title-price-wrapper {
+      display: flex;
+      flex-direction: column;
     }
   }
 }
