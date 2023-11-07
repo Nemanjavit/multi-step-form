@@ -63,7 +63,10 @@ const FormSlider: React.FC<FormSliderProps> = ({ setStep, step }) => {
 
   return (
     <FormProvider {...methods}>
-      <form className="form-slider" onSubmit={methods.handleSubmit(onSubmit)}>
+      <form
+        className="form-slider"
+        onSubmit={() => methods.handleSubmit(onSubmit)}
+      >
         <div className="slider-container d-flex flex-column">
           {step < 5 && (
             <div className="form-slider-header">
@@ -77,7 +80,7 @@ const FormSlider: React.FC<FormSliderProps> = ({ setStep, step }) => {
             <div className="d-flex justify-content-between form-slider-footer">
               <button
                 className={`slider-back ${step === 1 ? "hidden" : ""}`}
-                onClick={() => setStep(step - 1)}
+                onClick={() => setStep((prevStep) => prevStep - 1)}
               >
                 Go Back
               </button>
@@ -89,7 +92,6 @@ const FormSlider: React.FC<FormSliderProps> = ({ setStep, step }) => {
                   onClick={async () => {
                     const validate = await trigger(["name", "email", "phone"]);
                     if (validate) {
-                      console.log("step");
                       setStep((prevStep) => prevStep + 1);
                     }
                   }}
