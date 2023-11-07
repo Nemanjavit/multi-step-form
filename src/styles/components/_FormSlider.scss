@@ -47,7 +47,7 @@
   @include media-breakpoint-down(sm) {
     z-index: 2;
     top: 100px;
-    height: 375px;
+    height: auto;
     padding: 1.5rem;
     position: absolute;
     border-radius: 1rem;
