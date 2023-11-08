@@ -42,6 +42,7 @@ const FormSlider: React.FC<FormSliderProps> = ({ setStep, step }) => {
     },
     resolver: yupResolver(schema),
     mode: "onChange",
+    shouldUnregister: false,
   });
 
   const onSubmit: SubmitHandler<FormData> = (data) => setStep(5);
@@ -79,6 +80,7 @@ const FormSlider: React.FC<FormSliderProps> = ({ setStep, step }) => {
           {step < 5 && (
             <div className="d-flex justify-content-between form-slider-footer">
               <button
+                type="button"
                 className={`slider-back ${step === 1 ? "hidden" : ""}`}
                 onClick={() => setStep((prevStep) => prevStep - 1)}
               >
